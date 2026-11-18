@@ -1,0 +1,11 @@
+product_id,product_name,category,unit_price
+1,Laptop,Electronics,800.0
+2,Mouse,Electronics,20.0
+3,Desk,Furniture,150.0
+4,Chair,Furniture,100.0
+5,Monitor,Electronics,200.0
+6,Keyboard,Electronics,50.0
+7,Printer,Electronics,250.0
+8,Bookshelf,Furniture,180.0
+9,Headphones,Electronics,75.0
+10,Office Table,Furniture,220.0

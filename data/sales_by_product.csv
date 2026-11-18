@@ -1,0 +1,11 @@
+product_name,category,orders,units,sales,profit
+Laptop,Electronics,40,209,167200.0,31820.99
+Bookshelf,Furniture,63,358,64440.0,13263.58
+Monitor,Electronics,61,315,63000.0,12231.19
+Printer,Electronics,41,250,62500.0,12384.35
+Office Table,Furniture,54,272,59840.0,11908.25
+Desk,Furniture,51,309,46350.0,8396.34
+Chair,Furniture,45,249,24900.0,5006.15
+Headphones,Electronics,56,327,24525.0,4968.21
+Keyboard,Electronics,47,270,13500.0,2594.11
+Mouse,Electronics,42,257,5140.0,1125.05
