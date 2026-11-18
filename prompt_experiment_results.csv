@@ -1,0 +1,25 @@
+method,question,generated_sql,expected,actual,status,error,time_seconds
+basic,How many orders are there?,SELECT COUNT(*) AS total_orders FROM orders;,"[(10,)]","[(10,)]",PASS,,3.53
+basic,What are the total sales for each region?,"SELECT region, SUM(sales_amount) AS total_sales
+FROM sales
+GROUP BY region;","[('East', 2450.0), ('North', 1100.0), ('South', 1100.0), ('West', 3100.0)]",,ERROR,Query references an unauthorized table.,4.16
+basic,Which product generated the highest total sales?,"SELECT product_name, SUM(sales_amount) AS total_sales
+FROM sales
+GROUP BY product_name
+ORDER BY total_sales DESC
+LIMIT 1;","[('Laptop', 4800.0)]",,ERROR,Query references an unauthorized table.,5.2
+basic,What is the total profit?,"SELECT SUM(sales.price * sales.quantity - sales.cost) AS total_profit
+FROM sales;","[(1350.0,)]",,ERROR,Query references an unauthorized table.,4.13
+basic,How many distinct products are there?,"SELECT COUNT(DISTINCT product_id) AS distinct_product_count
+FROM sales;","[(5,)]",,ERROR,Query references an unauthorized table.,3.91
+schema,How many orders are there?,SELECT COUNT(*) FROM orders,"[(10,)]","[(10,)]",PASS,,5.69
+schema,What are the total sales for each region?,"SELECT region, SUM(sales) AS total_sales
+FROM orders
+GROUP BY region","[('East', 2450.0), ('North', 1100.0), ('South', 1100.0), ('West', 3100.0)]","[('East', 2450.0), ('North', 1100.0), ('South', 1100.0), ('West', 3100.0)]",PASS,,3.69
+schema,Which product generated the highest total sales?,"SELECT product_name, SUM(sales) AS total_sales
+FROM orders
+GROUP BY product_name
+ORDER BY total_sales DESC
+LIMIT 1","[('Laptop', 4800.0)]","[('Laptop', 4800.0)]",PASS,,4.67
+schema,What is the total profit?,SELECT SUM(profit) AS total_profit FROM orders,"[(1350.0,)]","[(1350.0,)]",PASS,,3.21
+schema,How many distinct products are there?,SELECT COUNT(DISTINCT product_name) FROM orders,"[(5,)]","[(5,)]",PASS,,3.2
